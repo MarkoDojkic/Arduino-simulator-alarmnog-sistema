@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "author": "Marko Dojkić",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -57, "left": -282, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -282,
+      "left": -148.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -332.57,
+      "left": -60.8,
+      "attrs": { "background": "blue", "color": "white" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": -191.4, "left": -124.06, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -65.7,
+      "left": 225.82,
+      "attrs": { "distance": "139" }
+    },
+    { "type": "wokwi-resistor", "id": "r2", "top": -178.18, "left": 221.15, "attrs": {} },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": -337.44,
+      "left": 269.39,
+      "attrs": { "pixels": "16" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -287.08,
+      "left": -273.22,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -390.32,
+      "left": 498.01,
+      "attrs": {
+        "keys": [ "1", "2", "3", "A", "4", "5", "6", "D", "7", "8", "9", "S", "?", "0", "↵", "⌫" ]
+      }
+    }
+  ],
+  "connections": [
+    [ "led1:C", "mega:GND.1", "black", [ "v0", "h-88" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "lcd1:RS", "mega:23", "green", [ "v57.6", "h115.5", "v96" ] ],
+    [ "lcd1:RW", "mega:GND.1", "black", [ "v19.2", "h-38.5", "v38.4", "h-134.4" ] ],
+    [ "lcd1:VSS", "mega:GND.1", "black", [ "v57.6", "h-9.6" ] ],
+    [ "lcd1:E", "mega:25", "green", [ "v48", "h105.6", "v124.8" ] ],
+    [ "lcd1:D4", "mega:27", "green", [ "v38.4", "h67.2", "v144" ] ],
+    [ "lcd1:D5", "mega:29", "green", [ "v28.8", "h67.3", "v163.2" ] ],
+    [ "lcd1:D6", "mega:31", "green", [ "v19.2", "h67.4", "v182.4" ] ],
+    [ "lcd1:D7", "mega:33", "green", [ "v9.6", "h67.5", "v201.6" ] ],
+    [ "ultrasonic1:VCC", "mega:5V", "red", [ "v115.2", "h-412.8" ] ],
+    [ "ultrasonic1:GND", "mega:GND.2", "black", [ "v124.8", "h-426.87" ] ],
+    [ "ultrasonic1:TRIG", "mega:40", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "mega:42", "green", [ "v0" ] ],
+    [ "lcd1:K", "mega:GND.1", "black", [ "v42.65", "h-274.9" ] ],
+    [ "lcd1:A", "r2:1", "yellow", [ "v0" ] ],
+    [ "lcd1:VDD", "mega:5V.1", "red", [ "v67.26", "h94.95" ] ],
+    [ "r2:2", "mega:5V.2", "yellow", [ "v50.68", "h7.29" ] ],
+    [ "r1:2", "mega:13", "green", [ "v98.46", "h-5.7" ] ],
+    [ "ring1:GND", "mega:GND.5", "black", [ "v68.18", "h0.71", "v23.1", "h-155.67", "v200.86" ] ],
+    [ "ring1:VCC", "mega:VIN", "red", [ "v95.3", "h67.43", "v251.07", "h-495.12" ] ],
+    [ "ring1:DIN", "mega:47", "green", [ "v62.15", "h0.59", "v16.07", "h-163.7", "v177.76" ] ],
+    [ "bz1:2", "mega:12", "red", [ "v84.9", "h133.24" ] ],
+    [ "bz1:1", "mega:GND.1", "black", [ "v71.73", "h108.27" ] ],
+    [ "keypad1:R1", "mega:48", "white", [ "v0" ] ],
+    [ "keypad1:R2", "mega:50", "white", [ "v0" ] ],
+    [ "keypad1:R3", "mega:52", "white", [ "v0" ] ],
+    [ "keypad1:C1", "mega:49", "orange", [ "v0" ] ],
+    [ "keypad1:C2", "mega:51", "orange", [ "v0" ] ],
+    [ "keypad1:C3", "mega:53", "orange", [ "v0" ] ],
+    [ "keypad1:R4", "mega:44", "white", [ "v0" ] ],
+    [ "keypad1:C4", "mega:45", "orange", [ "v0" ] ]
+  ]
+}
